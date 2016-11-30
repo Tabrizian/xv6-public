@@ -43,6 +43,16 @@ sys_getpid(void)
 }
 
 int
+sys_getppid(void)
+{
+if(proc->parent == 0)
+{
+return 0;
+}
+  return proc->parent->pid;
+}
+
+int
 sys_sbrk(void)
 {
   int addr;
